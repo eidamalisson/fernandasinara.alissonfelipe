@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root{
+    --text-color:#DBE4EF;
+    --card-front-color: #144480;
+    --card-back-color: #00F4BF;
+}
+
+body{
+    background: url(img/bg-desktop.webp);
+    font-family:"Bai Jamjuree" ;
+}
+
+#container{
+    display: flex; /*transforma em elemento flexível*/
+}
+
+.cartao{
+    margin: 1rem 1rem; /*espaço externo 1rem p/ todos os lados*/
+    height: 20rem; /*altura elemento 20rem*/
+    flex-grow: 1; /*cresce os elementos de maneira uniforme*/ 
+    flex-basis: calc(33% - 6rem); /*divide o espaço p/ 3 elementos*/
+}
+.cartao__conteudo{
+    background-color: var(--card-front-color);
+    text-align: center; /*alinhamento texto ao centro*/
+    height: 100%; /*altura da div em 100%*/
+    transform-style: preserve-3d; /*estilo da transformação:
+    preservar3dimensões*/
+    transition: transform 300ms ease-in-out;
+    /*transição de 300milisegundos de fácil percepção*/
+}
+
+.cartao__conteudo h3{ /*estilo do titulo do cartao*/
+    color: var(--text-color);/*COR DO TEXTO*/
+    border: 1px solid var(--text-color);
+    /*BORDA:1PIXEL TIPO SÓLIDA COR TIRADA DA VARIAVEL DE TEXTO*/
+    text-align: left; /*texto alinhado à esquerda*/
+    padding: 0.5rem;  /*espaço interno de 0.5 raiz*/
+    position: absolute; /*posiciona o titulo em relação ao "pai"*/
+    margin: 0.6rem;  /*margem externa de 0.6 raiz*/
+    border-radius: 0.6rem;  /*borda arredondada de 0.6 raiz*/
+    font-size: 1vw; /*tamanho letra do titulo, 1% largura raiz*/
+    backface-visibility: hidden; 
+    /*visibilidade do verso do elemento: oculto*/
+}
+.cartao__conteudo p{
+    margin-top: 1rem; /*MARGEM EXTERNA SUPERIOR DE 1REM*/
+    padding: 2rem; /*ESPAÇO INTERNO DO ELEMENTO DE 2REM*/
+    margin-top: 4rem; /*MARGEM EXTERNA SUPERIOR DE 1REM*/
+}
+
+.cartao__conteudo__pergunta p{
+    color: var(--text-color);
+    font-weight: 500; /*ESPESSURA DA LETRA, 500*/
+}
+.cartao__conteudo__resposta p{
+    color: var(--card-back-color);
+    font-weight: 700; /*ESPESSURA DA LETRA, 700*/
+}
+.cartao:hover .cartao__conteudo{ 
+    /*PSEUDOCLASSE HOVER, IDENTIFICA O ARRASTO DO MOUSE*/
+    transform: rotateY(180deg); 
+    /* Transformando a rotação no eixoY em 180graus*/
+}
+
+.cartao__conteudo__pergunta, 
+.cartao__conteudo__resposta{
+    backface-visibility: hidden; /*ELEMENTOS FICAM OCULTOS*/
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cartao__conteudo__resposta{
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+footer {
+    background-color: black;
+    color: white;
+    bottom:0;
+    position:fixed;
+    width:100%;
+    height: 2rem;
+}
+
+footer p{
+    text-align: center;
+    font-size: 0.6rem;
+    margin-top: 0.5rem;
+}
